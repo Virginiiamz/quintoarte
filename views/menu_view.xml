@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="quintoarte.main_quintoarte_menu" name="QuintoArte" />
+        <menuitem id="quintoarte.cliente_menu" name="Cliente" parent="quintoarte.main_quintoarte_menu" action="act_cliente" />
+        <!-- <menuitem id="quintoarte.empleado_menu" name="Empleado" parent="quintoarte.main_quintoarte_menu" action="" /> -->
+    </data>
+</odoo>
