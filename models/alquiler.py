@@ -15,4 +15,4 @@ class alquiler(models.Model):
     direccion = fields.Char("Dirección")
     #cuadro_ids = fields.Many2many('')
     #empleado_id = fields.Many2one('res.partner', string="Empleado", required=True)
-    cliente_id = fields.Many2one('res.partner', string="Cliente", required=True)
+    # cliente_id = fields.Many2one('res.partner', string="Cliente", required=True)
