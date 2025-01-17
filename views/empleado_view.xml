@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="view_empleado_tree">
+            <field name="name">quintoarte.empleado.tree</field>
+            <field name="model">quintoarte.empleado</field>
+            <field name="arch" type="xml">
+                <tree string="Lista de empleados">
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="sueldo"/>
+                    <field name="puesto"/>
+                </tree>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_empleado">
             <field name="name">Empleado</field>
             <field name="res_model">quintoarte.empleado</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_empleado_tree"/>
         </record>
     </data>
 </odoo>

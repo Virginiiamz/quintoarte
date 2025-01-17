@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="vista_cliente_tree">
+            <field name="name">quintoarte.cliente.tree</field>
+            <field name="model">quintoarte.cliente</field>
+            <field name="arch" type="xml">
+                <tree string="Lista de clientes">
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                </tree>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_cliente">
             <field name="name">Cliente</field>
             <field name="res_model">quintoarte.cliente</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vista_cliente_tree"/>
         </record>
     </data>
 </odoo>
