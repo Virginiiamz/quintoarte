@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <!-- vista_marco_tree -->
+        <record model="ir.ui.view" id="vista_marco_tree">
+        <!-- quintoarte.marco .tree-->
+            <field name="name">quintoarte.marco.tree</field>
+            <field name="model">quintoarte.marco</field>
+            <field name="arch" type="xml">
+                <tree string="Lista de marcos">
+                    <field name="marco_id"/>
+                    <field name="nombre"/>
+                    <field name="descripcion"/>
+                    <field name="foto"/>
+                    <field name="precio_metro"/>
+                </tree>
+            </field>
+        </record>
+
+    <!-- act_marco-->
+        <record model="ir.actions.act_window" id="act_marco">
+            <field name="name">Marco</field>
+            <field name="res_model">quintoarte.marco</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vista_marco_tree"/>
+        </record>
+    </data>
+</odoo>

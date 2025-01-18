@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 
-class persona (models.Model):
+class marco (models.Model):
     _name = 'quintoarte.marco'
     _description = 'Un marco'
     
@@ -9,5 +9,6 @@ class persona (models.Model):
     nombre = fields.Char("Nombre", required=True, size = 30, readonly=False)
     descripcion = fields.Char("Descripcion", required=True, size = 64, readonly=False)
     foto = fields.Binary("Foto", required=True, readonly=False)
-    preciometro = fields.Float("Precio Metro", required=True, size = 30, readonly=False)
+    precio_metro = fields.Float("Precio Metro", required=True, size = 30, readonly=False)
     
+    # enmarcado_id = fields.One2many("quintoarte.enmarcado",string="Enmarcados")

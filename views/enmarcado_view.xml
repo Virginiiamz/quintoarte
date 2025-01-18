@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <!-- vista_enmarcado_tree -->
+        <record model="ir.ui.view" id="vista_enmarcado_tree">
+        <!-- quintoarte.enmarcado .tree-->
+            <field name="name">quintoarte.enmarcado.tree</field>
+            <field name="model">quintoarte.enmarcado</field>
+            <field name="arch" type="xml">
+                <tree string="Lista de enmarcados">
+                    <field name="enmarcado_id"/>
+                    <field name="metros"/>
+                    <field name="precio_total"/>
+                    <field name="fecha_enmarcado"/>
+                </tree>
+            </field>
+        </record>
+
+    <!-- act_enmarcado-->
+        <record model="ir.actions.act_window" id="act_enmarcado">
+            <field name="name">enmarcado</field>
+            <field name="res_model">quintoarte.enmarcado</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vista_enmarcado_tree"/>
+        </record>
+    </data>
+</odoo>

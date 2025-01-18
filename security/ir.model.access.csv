@@ -2,3 +2,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_quintoarte_persona,quintoarte.persona,model_quintoarte_persona,base.group_user,1,1,1,1
 access_quintoarte_cliente,quintoarte.cliente,model_quintoarte_cliente,base.group_user,1,1,1,1
 access_quintoarte_empleado,quintoarte.empleado,model_quintoarte_empleado,base.group_user,1,1,1,1
+
+access_quintoarte_marco,quintoarte.marco,model_quintoarte_marco,base.group_user,1,1,1,1
+access_quintoarte_enmarcado,quintoarte.enmarcado,model_quintoarte_enmarcado,base.group_user,1,1,1,1

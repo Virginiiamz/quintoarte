@@ -4,5 +4,10 @@
         <menuitem id="quintoarte.main_quintoarte_menu" name="QuintoArte" />
         <menuitem id="quintoarte.cliente_menu" name="Cliente" parent="quintoarte.main_quintoarte_menu" action="act_cliente" />
         <menuitem id="quintoarte.empleado_menu" name="Empleado" parent="quintoarte.main_quintoarte_menu" action="act_empleado" />
+        <!-- marco-->
+        <menuitem id="quintoarte.marco_menu" name="Marco" parent="quintoarte.main_quintoarte_menu" action="act_marco" />
+        <!-- enmarcado-->
+        <menuitem id="quintoarte.enmarcado_menu" name="Enmarcado" parent="quintoarte.main_quintoarte_menu" action="act_enmarcado" />
+
     </data>
 </odoo>
