@@ -6,3 +6,5 @@ from . import cliente
 from . import empleado
 from . import marco
 from . import enmarcado
+from . import alquiler
+from . import cuadro

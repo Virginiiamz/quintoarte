@@ -5,3 +5,6 @@ access_quintoarte_empleado,quintoarte.empleado,model_quintoarte_empleado,base.gr
 
 access_quintoarte_marco,quintoarte.marco,model_quintoarte_marco,base.group_user,1,1,1,1
 access_quintoarte_enmarcado,quintoarte.enmarcado,model_quintoarte_enmarcado,base.group_user,1,1,1,1
+
+access_quintoarte_alquiler,quintoarte.alquiler,model_quintoarte_alquiler,base.group_user,1,1,1,1
+access_quintoarte_cuadro,quintoarte.cuadro,model_quintoarte_cuadro,base.group_user,1,1,1,1

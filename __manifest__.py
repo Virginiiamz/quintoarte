@@ -31,6 +31,8 @@
         'views/empleado_view.xml',
         'views/marco_view.xml',
         'views/enmarcado_view.xml',
+        'views/alquiler_view.xml',
+        'views/cuadro_view.xml',
         'views/menu_view.xml'
     ],
     # only loaded in demonstration mode

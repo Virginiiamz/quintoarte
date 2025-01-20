@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="act_cuadro">
+            <field name="name">Cuadro</field>
+            <field name="res_model">quintoarte.cuadro</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
