@@ -13,5 +13,5 @@ class cliente (models.Model):
                                 ('asociacion', 'Asociacion')], "Tipo de cliente", default='particular', required=True)
     
     # alquiler_ids = fields.One2many("quintoarte.alquiler",string="Alquileres")
-    # enmarcado_ids = fields.One2many("quintoarte.enmarcado",string="Cuadros enmarcados")
+    enmarcado_ids = fields.One2many("quintoarte.enmarcado","cliente_id", string="Cuadros enmarcados")
      
