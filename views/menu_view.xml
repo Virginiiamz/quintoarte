@@ -8,6 +8,10 @@
         <menuitem id="quintoarte.marco_menu" name="Marco" parent="quintoarte.main_quintoarte_menu" action="act_marco" />
         <!-- enmarcado-->
         <menuitem id="quintoarte.enmarcado_menu" name="Enmarcado" parent="quintoarte.main_quintoarte_menu" action="act_enmarcado" />
+        <!-- alquiler-->
+        <menuitem id="quintoarte.alquiler_menu" name="Alquiler" parent="quintoarte.main_quintoarte_menu" action="act_alquiler" />
+        <!-- cuadro-->
+        <menuitem id="quintoarte.cuadro_menu" name="Cuadro" parent="quintoarte.main_quintoarte_menu" action="act_cuadro" />
 
     </data>
 </odoo>
