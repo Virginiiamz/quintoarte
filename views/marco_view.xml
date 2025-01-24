@@ -13,6 +13,7 @@
                     <field name="descripcion"/>
                     <field name="foto"/>
                     <field name="precio_metro"/>
+                    <field name="enmarcado_ids"/>
                 </tree>
             </field>
         </record>

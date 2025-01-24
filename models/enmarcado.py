@@ -11,6 +11,6 @@ class enmarcado (models.Model):
     fecha_enmarcado = fields.Date("Fecha Enmarcado", required=True, readonly=False)
     
 
-    # marco_id = fields.Many2one("quintoarte.marco",string="Marco")
-    # cuadro_id = fields.Many2one("quintoarte.cuadro",string="Cuadro")
+    marco_id = fields.Many2one("quintoarte.marco",string="Marco")
+    cuadro_id = fields.Many2one("quintoarte.cuadro",string="Cuadro")
     cliente_id = fields.Many2one("quintoarte.cliente",string="Cliente")

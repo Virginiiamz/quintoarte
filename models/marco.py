@@ -11,4 +11,4 @@ class marco (models.Model):
     foto = fields.Binary("Foto", required=True, readonly=False)
     precio_metro = fields.Float("Precio Metro", required=True, size = 30, readonly=False)
     
-    # enmarcado_id = fields.One2many("quintoarte.enmarcado",string="Enmarcados")
+    enmarcado_ids = fields.One2many("quintoarte.enmarcado","marco_id", string="Cuadros enmarcados")

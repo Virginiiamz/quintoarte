@@ -16,4 +16,4 @@ class cuadro(models.Model):
     propiedad = fields.Selection([('cliente', 'Cliente'), ('tienda', 'Tienda')], "Propiedad")
     foto = fields.Binary("Foto")
     # alquiler_ids = fields.Many2many('')
-    # enmarcado_ids = fields.One2many('', '')
+    enmarcado_ids = fields.One2many("quintoarte.enmarcado","cuadro_id", string="Cuadros enmarcados")
