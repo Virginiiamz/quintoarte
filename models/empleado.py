@@ -10,5 +10,5 @@ class empleado (models.Model):
     es_jefe = fields.Boolean(string='Es jefe', default=False, required=False)
     puesto = fields.Char(string='puesto', required=True, size = 60, readonly=False)
     
-    # alquiler_ids = fields.One2many("quintoarte.alquiler",string="Alquileres")
+    alquiler_ids = fields.One2many("quintoarte.alquiler","alquiler_id",string="Alquileres")
      
