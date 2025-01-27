@@ -11,6 +11,7 @@ class empleado (models.Model):
     es_jefe = fields.Boolean(string='Es jefe', default=False, required=False)
     puesto = fields.Char(string='puesto', required=True, size = 60, readonly=False)
     
+    # Valida si el sueldo es menor a 1200€
     @api.constrains('sueldo')
     def _check_sueldo(self):
         for record in self:
