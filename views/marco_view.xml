@@ -2,8 +2,9 @@
 <odoo>
     <data>
     <!-- vista_marco_tree -->
-        <record model="ir.ui.view" id="vista_marco_tree">
-        <!-- quintoarte.marco .tree-->
+    <!-- quintoarte.marco .tree-->
+        <!-- <record model="ir.ui.view" id="vista_marco_tree">
+        
             <field name="name">quintoarte.marco.tree</field>
             <field name="model">quintoarte.marco</field>
             <field name="arch" type="xml">
@@ -16,14 +17,33 @@
                     <field name="enmarcado_ids"/>
                 </tree>
             </field>
-        </record>
+        </record> -->
 
+        <record model="ir.ui.view" id="vista_marco_search">
+        <field name="name">quintoarte.marco.search</field>
+        <field name="model">quintoarte.marco</field>
+        <field name="arch" type="xml">
+            <search string="Buscar marcos">
+                <field name="marco_id"/>
+                <field name="nombre"/>
+                <field name="descripcion"/>
+                <field name="precio_metro"/>
+                <filter string="Precio > 100" name="precio_alto" domain="[('precio_metro', '>', 100)]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Nombre" name="group_by_nombre" context="{'group_by':'nombre'}"/>
+                    <filter string="Precio" name="group_by_precio" context="{'group_by':'precio_metro'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+ 
     <!-- act_marco-->
-        <record model="ir.actions.act_window" id="act_marco">
-            <field name="name">Marco</field>
-            <field name="res_model">quintoarte.marco</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="vista_marco_tree"/>
-        </record>
+       <record model="ir.actions.act_window" id="act_marco">
+        <field name="name">Marco</field>
+        <field name="res_model">quintoarte.marco</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="vista_marco_tree"/>
+        <field name="search_view_id" ref="vista_marco_search"/>
+    </record>
     </data>
 </odoo>

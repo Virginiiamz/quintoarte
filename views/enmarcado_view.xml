@@ -3,7 +3,7 @@
     <data>
     <!-- vista_enmarcado_tree -->
         <record model="ir.ui.view" id="vista_enmarcado_tree">
-        <!-- quintoarte.enmarcado .tree-->
+        <!-- quintoarte.enmarcado .tree -->
             <field name="name">quintoarte.enmarcado.tree</field>
             <field name="model">quintoarte.enmarcado</field>
             <field name="arch" type="xml">
@@ -15,13 +15,26 @@
                 </tree>
             </field>
         </record>
-
-    <!-- act_enmarcado-->
+        
+  
+        <record model="ir.ui.view" id="enmarcado_calendar_view">
+            <field name="name">Calenario enmarcado</field>
+            <field name="model">quintoarte.enmarcado</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendar View" date_start="fecha_enmarcado">
+                    <field name="enmarcado_id"/>
+                    <field name="metros"/>
+                    <field name="precio_total"/>
+                </calendar>
+            </field>
+        </record>
+ 
         <record model="ir.actions.act_window" id="act_enmarcado">
             <field name="name">enmarcado</field>
             <field name="res_model">quintoarte.enmarcado</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">calendar,tree,form</field>
             <field name="view_id" ref="vista_enmarcado_tree"/>
         </record>
+
     </data>
 </odoo>
