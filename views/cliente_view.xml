@@ -15,6 +15,26 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="view_cliente_search">
+			<field name="name">quintoarte.cliente.search</field>
+			<field name="model">quintoarte.cliente</field>
+			<field name="arch" type="xml">
+				<search string="Buscar clientes">
+                
+					<field name="nombre" string="Nombre" />
+					<field name="tipo" string="Tipo" />
+					<filter string="Particular" name="filter_particular" domain="[('tipo', '=', 'particular')]" />
+					<filter string="Empresa publica" name="filter_empresa_publica" domain="[('tipo', '=', 'empresa publica')]" />
+					<filter string="Empresa privada" name="filter_empresa_privada" domain="[('tipo', '=', 'empresa privada')]" />
+					<filter string="Asociacion" name="filter_asociacion" domain="[('tipo', '=', 'asociacion')]" />
+
+					<group expand="1" string="Agrupar por">
+						<filter string="Tipos" name="group_by_tipo" context="{'group_by': 'tipo'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
         <record model="ir.actions.act_window" id="act_cliente">
             <field name="name">Cliente</field>
             <field name="res_model">quintoarte.cliente</field>
