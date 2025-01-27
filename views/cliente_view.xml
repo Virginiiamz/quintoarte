@@ -6,6 +6,7 @@
             <field name="model">quintoarte.cliente</field>
             <field name="arch" type="xml">
                 <tree string="Lista de clientes">
+                    <!-- Datos que se muestra en la tabla -->
                     <field name="dni"/>
                     <field name="nombre"/>
                     <field name="apellidos"/>
@@ -15,6 +16,7 @@
             </field>
         </record>
 
+        <!-- Personalizacion de la busqueda -->
         <record model="ir.ui.view" id="view_cliente_search">
 			<field name="name">quintoarte.cliente.search</field>
 			<field name="model">quintoarte.cliente</field>
@@ -35,10 +37,22 @@
 			</field>
 		</record>
 
+        <!-- Vista de grafica -->
+        <record model="ir.ui.view" id="view_cliente_graph">
+            <field name="name">quintoarte.cliente.graph</field>
+            <field name="model">quintoarte.cliente</field>
+            <field name="arch" type="xml">
+                <graph string="Distribución de tipos de clientes" type="pie">
+                    <field name="tipo" type="row"/>
+                    <field name="id" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_cliente">
             <field name="name">Cliente</field>
             <field name="res_model">quintoarte.cliente</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">graph,tree,form</field>
             <field name="view_id" ref="vista_cliente_tree"/>
         </record>
     </data>
