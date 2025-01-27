@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
-        <menuitem id="quintoarte.main_quintoarte_menu" name="QuintoArte" />
-        <menuitem id="quintoarte.cliente_menu" name="Cliente" parent="quintoarte.main_quintoarte_menu" action="act_cliente" />
-        <menuitem id="quintoarte.empleado_menu" name="Empleado" parent="quintoarte.main_quintoarte_menu" action="act_empleado" />
-        <!-- marco-->
-        <menuitem id="quintoarte.marco_menu" name="Marco" parent="quintoarte.main_quintoarte_menu" action="act_marco" />
-        <!-- enmarcado-->
-        <menuitem id="quintoarte.enmarcado_menu" name="Enmarcado" parent="quintoarte.main_quintoarte_menu" action="act_enmarcado" />
-        <!-- alquiler-->
-        <menuitem id="quintoarte.alquiler_menu" name="Alquiler" parent="quintoarte.main_quintoarte_menu" action="act_alquiler" />
-        <!-- cuadro-->
-        <menuitem id="quintoarte.cuadro_menu" name="Cuadro" parent="quintoarte.main_quintoarte_menu" action="act_cuadro" />
-
-    </data>
+	<data>
+		<menuitem id="quintoarte.main_quintoarte_menu" name="QuintoArte" />
+		<!-- Cliente -->
+		<menuitem id="quintoarte.cliente_menu" name="Cliente" parent="quintoarte.main_quintoarte_menu" />
+		<menuitem id="quintoarte.cliente2_menu" name="Gestionar clientes" parent="quintoarte.cliente_menu" action="act_cliente" />
+		<menuitem id="quintoarte.cliente3_menu" name="Mostrar clientes" parent="quintoarte.cliente_menu" action="act_mostrar_cliente" />
+		<!-- Empleado -->
+		<menuitem id="quintoarte.empleado_menu" name="Empleado" parent="quintoarte.main_quintoarte_menu" />
+		<menuitem id="quintoarte.empleado2_menu" name="Gestionar empleados" parent="quintoarte.empleado_menu" action="act_empleado" />
+		<menuitem id="quintoarte.empleado3_menu" name="Mostrar empleados" parent="quintoarte.empleado_menu" action="act_mostrar_empleado" />
+		<!-- marco -->
+		<menuitem id="quintoarte.marco_menu" name="Marco" parent="quintoarte.main_quintoarte_menu" action="act_marco" />
+		<!-- enmarcado -->
+		<menuitem id="quintoarte.enmarcado_menu" name="Enmarcado" parent="quintoarte.main_quintoarte_menu" action="act_enmarcado" />
+		<!-- alquiler -->
+		<menuitem id="quintoarte.alquiler_menu" name="Alquiler" parent="quintoarte.main_quintoarte_menu" action="act_alquiler" />
+		<!-- cuadro -->
+		<menuitem id="quintoarte.cuadro_menu" name="Cuadro" parent="quintoarte.main_quintoarte_menu" action="act_cuadro" />
+	</data>
 </odoo>

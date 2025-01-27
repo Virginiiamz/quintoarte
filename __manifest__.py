@@ -28,7 +28,9 @@
     'data': [
         'security/ir.model.access.csv',
         'views/cliente_view.xml',
+        'views/mostrar_cliente_view.xml',
         'views/empleado_view.xml',
+        'views/mostrar_empleado_view.xml',
         'views/marco_view.xml',
         'views/enmarcado_view.xml',
         'views/alquiler_view.xml',
