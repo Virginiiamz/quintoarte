@@ -24,7 +24,7 @@
                 <calendar string="Calendar View" date_start="fecha_enmarcado">
                     <field name="enmarcado_id"/>
                     <field name="metros"/>
-                    <field name="precio_total"/>
+                    <field name="precio_total" /> 
                 </calendar>
             </field>
         </record>

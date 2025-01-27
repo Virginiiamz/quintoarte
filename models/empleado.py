@@ -1,5 +1,6 @@
 from odoo import models, fields, api
-
+from odoo.exceptions import ValidationError
+import re
 
 class empleado (models.Model):
     _inherit = 'quintoarte.persona'
@@ -10,5 +11,12 @@ class empleado (models.Model):
     es_jefe = fields.Boolean(string='Es jefe', default=False, required=False)
     puesto = fields.Char(string='puesto', required=True, size = 60, readonly=False)
     
-    # alquiler_ids = fields.One2many("quintoarte.alquiler",string="Alquileres")
+    # Valida si el sueldo es menor a 1200€
+    @api.constrains('sueldo')
+    def _check_sueldo(self):
+        for record in self:
+            if record.sueldo < 1200:
+                raise ValidationError("El sueldo tiene que ser igual o superior a 1200€.")
+    
+    alquiler_ids = fields.One2many("quintoarte.alquiler","alquiler_id",string="Alquileres")
      

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_empleado_kanban">
+            <field name="name">quintoarte.empleado.kanban</field>
+            <field name="model">quintoarte.empleado</field>
+            <field name="arch" type="xml">
+                <kanban string="Lista de empleados" class="o_kanban_example">
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="sueldo"/>
+                    <field name="puesto"/>
+
+                    <!-- Contenido de cada tarjeta -->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <div class="o_kanban_content">
+                                    <p><strong>DNI:</strong> <span t-esc="record.dni.value"/></p>
+                                    <p><strong>Nombre:</strong> <span t-esc="record.nombre.value"/></p>
+                                    <p><strong>Apellidos:</strong> <span t-esc="record.apellidos.value"/></p>
+                                    <p><strong>Sueldo:</strong> <span t-esc="record.sueldo.value"/> €</p>
+                                    <p><strong>Puesto:</strong> <span t-esc="record.puesto.value"/></p>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_mostrar_empleado">
+            <field name="name">Empleado</field>
+            <field name="res_model">quintoarte.empleado</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="vista_empleado_kanban"/>
+        </record>
+    </data>
+</odoo>

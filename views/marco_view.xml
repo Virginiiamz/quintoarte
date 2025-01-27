@@ -3,7 +3,7 @@
     <data>
     <!-- vista_marco_tree -->
     <!-- quintoarte.marco .tree-->
-        <!-- <record model="ir.ui.view" id="vista_marco_tree">
+        <record model="ir.ui.view" id="vista_marco_tree">
         
             <field name="name">quintoarte.marco.tree</field>
             <field name="model">quintoarte.marco</field>
@@ -17,7 +17,7 @@
                     <field name="enmarcado_ids"/>
                 </tree>
             </field>
-        </record> -->
+        </record>
 
         <record model="ir.ui.view" id="vista_marco_search">
         <field name="name">quintoarte.marco.search</field>

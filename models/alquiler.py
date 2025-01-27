@@ -14,5 +14,5 @@ class alquiler(models.Model):
     observacion = fields.Text("Observación")
     direccion = fields.Char("Dirección")
     #cuadro_ids = fields.Many2many('')
-    #empleado_id = fields.Many2one('res.partner', string="Empleado", required=True)
-    # cliente_id = fields.Many2one('res.partner', string="Cliente", required=True)
+    empleado_id = fields.Many2one("quintoarte.empleado",string="Empleado")
+    cliente_id = fields.Many2one("quintoarte.cliente",string="Cliente")

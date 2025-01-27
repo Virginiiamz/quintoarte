@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_cliente_kanban">
+            <field name="name">quintoarte.cliente.kanban</field>
+            <field name="model">quintoarte.cliente</field>
+            <field name="arch" type="xml">
+                <kanban string="Lista de clientes" class="o_kanban_example">
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="tipo"/>
+                    <field name="enmarcado_ids"/>
+
+                    <!-- Contenido de cada tarjeta -->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <div class="o_kanban_content">
+                                    <p><strong>DNI:</strong> <span t-esc="record.dni.value"/></p>
+                                    <p><strong>Nombre:</strong> <span t-esc="record.nombre.value"/></p>
+                                    <p><strong>Apellidos:</strong> <span t-esc="record.apellidos.value"/> años</p>
+                                    <p><strong>Tipo cliente:</strong> <span t-esc="record.tipo.value"/></p>
+                                    <p><strong>Total enmarcados:</strong> <span t-esc="record.enmarcado_ids.value"/></p>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_mostrar_cliente">
+            <field name="name">Cliente</field>
+            <field name="res_model">quintoarte.cliente</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="vista_cliente_kanban"/>
+        </record>
+    </data>
+</odoo>

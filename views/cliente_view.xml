@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="vista_cliente_kanban">
+        <record model="ir.ui.view" id="vista_cliente_tree">
             <field name="name">quintoarte.cliente.kanban</field>
             <field name="model">quintoarte.cliente</field>
             <field name="arch" type="xml">
-                <kanban string="Lista de clientes" class="o_kanban_example">
+                <tree string="Lista de clientes">
+                    <!-- Datos que se muestra en la tabla -->
                     <field name="dni"/>
                     <field name="nombre"/>
                     <field name="apellidos"/>
                     <field name="tipo"/>
                     <field name="enmarcado_ids"/>
+                </tree>
+            </field>
+        </record>
 
-                    <!-- Contenido de cada tarjeta -->
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div class="oe_kanban_card">
-                                <div class="o_kanban_content">
-                                    <p><strong>DNI:</strong> <span t-esc="record.dni.value"/></p>
-                                    <p><strong>Nombre:</strong> <span t-esc="record.nombre.value"/></p>
-                                    <p><strong>Apellidos:</strong> <span t-esc="record.apellidos.value"/> años</p>
-                                    <p><strong>Tipo cliente:</strong> <span t-esc="record.tipo.value"/></p>
-                                    <p><strong>Total enmarcados:</strong> <span t-esc="record.enmarcado_ids.value"/></p>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
+        <!-- Personalizacion de la busqueda -->
+        <record model="ir.ui.view" id="view_cliente_search">
+			<field name="name">quintoarte.cliente.search</field>
+			<field name="model">quintoarte.cliente</field>
+			<field name="arch" type="xml">
+				<search string="Buscar clientes">
+                
+					<field name="nombre" string="Nombre" />
+					<field name="tipo" string="Tipo" />
+					<filter string="Particular" name="filter_particular" domain="[('tipo', '=', 'particular')]" />
+					<filter string="Empresa publica" name="filter_empresa_publica" domain="[('tipo', '=', 'empresa publica')]" />
+					<filter string="Empresa privada" name="filter_empresa_privada" domain="[('tipo', '=', 'empresa privada')]" />
+					<filter string="Asociacion" name="filter_asociacion" domain="[('tipo', '=', 'asociacion')]" />
+
+					<group expand="1" string="Agrupar por">
+						<filter string="Tipos" name="group_by_tipo" context="{'group_by': 'tipo'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+        <!-- Vista de grafica -->
+        <record model="ir.ui.view" id="view_cliente_graph">
+            <field name="name">quintoarte.cliente.graph</field>
+            <field name="model">quintoarte.cliente</field>
+            <field name="arch" type="xml">
+                <graph string="Distribución de tipos de clientes" type="pie">
+                    <field name="tipo" type="row"/>
+                    <field name="id" type="measure"/>
+                </graph>
             </field>
         </record>
 
         <record model="ir.actions.act_window" id="act_cliente">
             <field name="name">Cliente</field>
             <field name="res_model">quintoarte.cliente</field>
-            <field name="view_mode">kanban,tree,form</field>
-            <field name="view_id" ref="vista_cliente_kanban"/>
+            <field name="view_mode">graph,tree,form</field>
+            <field name="view_id" ref="vista_cliente_tree"/>
         </record>
     </data>
 </odoo>
