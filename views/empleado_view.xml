@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
-        <record model="ir.ui.view" id="view_empleado_tree">
-            <field name="name">quintoarte.empleado.tree</field>
-            <field name="model">quintoarte.empleado</field>
-            <field name="arch" type="xml">
-                <tree string="Lista de empleados">
-                    <field name="dni"/>
-                    <field name="nombre"/>
-                    <field name="apellidos"/>
-                    <field name="sueldo"/>
-                    <field name="puesto"/>
-                </tree>
-            </field>
-        </record>
+	<data>
+		<record model="ir.ui.view" id="view_empleado_tree">
+			<field name="name">quintoarte.empleado.tree</field>
+			<field name="model">quintoarte.empleado</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de empleados">
+					<field name="dni" />
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="sueldo" />
+					<field name="puesto" />
+				</tree>
+			</field>
+		</record>
 
-        <record model="ir.actions.act_window" id="act_empleado">
-            <field name="name">Empleado</field>
-            <field name="res_model">quintoarte.empleado</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_empleado_tree"/>
-        </record>
-    </data>
+		<record model="ir.ui.view" id="view_empleado_search">
+			<field name="name">quintoarte.empleado.search</field>
+			<field name="model">quintoarte.empleado</field>
+			<field name="arch" type="xml">
+				<search string="Buscar empleados">
+                
+					<field name="nombre" string="Nombre" />
+					<field name="sueldo" string="Sueldo" />
+					<field name="puesto" string="Puesto" />
+					<field name="es_jefe" string="Es Jefe" />
+					<filter string="Jefes" name="filter_jefes" domain="[('es_jefe', '=', True)]" />
+					<filter string="No Jefes" name="filter_no_jefes" domain="[('es_jefe', '=', False)]" />
+
+					<group expand="1" string="Agrupar por">
+						<filter string="Puesto" name="group_by_puesto" context="{'group_by': 'puesto'}" />
+						<filter string="Jefes" name="group_by_jefe" context="{'group_by': 'es_jefe'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_empleado">
+			<field name="name">Empleado</field>
+			<field name="res_model">quintoarte.empleado</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_empleado_tree" />
+		</record>
+	</data>
 </odoo>
