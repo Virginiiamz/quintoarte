@@ -37,10 +37,10 @@
         'views/cuadro_view.xml',
         'views/empleado_reports.xml',
         'views/menu_view.xml',
-        # 'demo/demo.xml'
+        'demo/demo.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        # 'demo/demo.xml',
     ],
 }

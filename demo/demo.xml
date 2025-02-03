@@ -1,25 +1,25 @@
 <odoo>
     <data>
-      <!-- Primero, define el cliente -->
-      <record id="cli1" model="quintoarte.cliente">
-            <field name="dni">11199944D</field>
-            <field name="nombre">Roberto</field>
-            <field name="apellidos">Moreno</field>
-            <field name="direccion">Sevilla</field>
-            <field name="telefono">123556677</field>
-            <field name="es_vip">True</field>
-            <field name="tipo">particular</field>
-            <field name="state">no_paga</field>
-      </record>
+        <!-- Primero, define el cliente -->
+        <record id="cli1" model="quintoarte.cliente">
+              <field name="dni">11199944D</field>
+              <field name="nombre">Roberto</field>
+              <field name="apellidos">Moreno</field>
+              <field name="direccion">Sevilla</field>
+              <field name="telefono">123556677</field>
+              <field name="es_vip">True</field>
+              <field name="tipo">particular</field>
+              <field name="state">no_paga</field>
+        </record>
 
-    <!-- Luego, define el alquiler y referencia el cliente -->
-      <record id="alquiler1" model="quintoarte.alquiler">
-            <field name="fecha_inicio">12/01/2025</field>
-            <field name="fecha_fin">18/01/2025</field>
-            <field name="precio_total">54.2</field>
-            <field name="observacion">Un alquiler de Roberto Moreno</field>
-            <field name="direccion">Sevilla</field>
-            <field name="cliente_id" ref="cli1"/>
-      </record>
+      <!-- Luego, define el alquiler y referencia el cliente -->
+        <record id="alquiler1" model="quintoarte.alquiler">
+              <field name="fecha_inicio">2025-01-12</field> <!-- Formato corregido -->
+              <field name="fecha_fin">2025-01-18</field>   <!-- Formato corregido -->
+              <field name="precio_total">54.2</field>
+              <field name="observacion">Un alquiler de Roberto Moreno</field>
+              <field name="direccion">Sevilla</field>
+              <field name="cliente_id" ref="cli1"/>
+        </record>
     </data>
 </odoo>
