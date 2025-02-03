@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+        <!-- Plantilla del informe -->
+        <template id="report_quintoarte_empleados_document">
+            <t t-name="quintoarte.report_quintoarte_empleados_document">
+                <!-- Usamos external_layout/internal_layout para asegurar la estructura adecuada -->
+                <t t-call="web.html_container">
+
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <h1>Lista de Empleados de Quintoarte</h1>
+                            <table class="table table-bordered" style="width: 100%; border-collapse: collapse; text-align: left;">
+                                <thead>
+                                    <tr>
+                                        <th style="border: 1px solid #000; padding: 8px;">DNI</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">Nombre</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">Apellidos</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">Direccion</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">Telefono</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">Sueldo</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">Puesto</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">Alquileres</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="docs" t-as="empleado">
+                                        <tr>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="empleado.dni"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="empleado.nombre"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="empleado.apellidos"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="empleado.direccion"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="empleado.telefono"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="empleado.sueldo"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="empleado.puesto"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <ul>
+                                                    <t t-foreach="empleado.alquiler_ids" t-as="alquileres">
+                                                        <li>
+                                                            <t t-esc="alquileres.observacion"/>
+                                                        </li>
+                                                    </t>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <!-- Acción de reporte -->
+        <report id="quintoarte_empleados_report_action" 
+        model="quintoarte.empleado" 
+        string="Quintoarte Empleados Report" 
+        report_type="qweb-pdf" 
+        name="quintoarte.report_quintoarte_empleados_document"
+        file="quintoarte.report_quintoarte_empleados_document" 
+        print_report_name="'Empleados_Quintoarte'" />
+    </data>
+</odoo>
