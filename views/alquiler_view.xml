@@ -23,6 +23,27 @@
             </field>
         </record>
 
+        <!-- Vista Form -->
+        <record id="view_alquiler_form" model="ir.ui.view">
+            <field name="name">quintoarte.alquiler.form</field>
+            <field name="model">quintoarte.alquiler</field>
+            <field name="arch" type="xml">
+                <form string="Alquiler">
+                    <sheet>
+                        <group>
+                            <field name="fecha_inicio"/>
+                            <field name="fecha_fin"/>
+                            <field name="cliente_id"/>
+                            <field name="empleado_id"/>
+                            <field name="precio_total"/>
+                            <field name="direccion"/>
+                            <field name="observacion"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <!-- Vista Search -->
         <record id="view_alquiler_search" model="ir.ui.view">
             <field name="name">quintoarte.alquiler.search</field>

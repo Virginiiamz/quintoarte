@@ -22,6 +22,41 @@
             </field>
         </record>
 
+        <!-- Vista Form -->
+        <record id="view_cuadro_form" model="ir.ui.view">
+            <field name="name">quintoarte.cuadro.form</field>
+            <field name="model">quintoarte.cuadro</field>
+            <field name="arch" type="xml">
+                <form string="Cuadro">
+                    <sheet>
+                        <group>
+                            <field name="titulo"/>
+                            <field name="autor"/>
+                            <field name="anyo"/>
+                            <field name="ancho"/>
+                            <field name="alto"/>
+                            <field name="precio_alquiler"/>
+                            <field name="propiedad"/>
+                            <field name="foto" widget="image"/>
+                        </group>
+                    </sheet>
+                    <notebook>
+                        <page string="Alquileres">
+                            <field name="alquiler_ids" widget="many2many_tags"/>
+                        </page>
+                        <page string="Enmarcados">
+                            <field name="enmarcado_ids">
+                                <tree>
+                                    <field name="nombre"/>
+                                    <field name="descripcion"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
         <!-- Vista Search -->
         <record id="view_cuadro_search" model="ir.ui.view">
             <field name="name">quintoarte.cuadro.search</field>
