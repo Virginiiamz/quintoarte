@@ -6,5 +6,57 @@
             <field name="res_model">quintoarte.cuadro</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <!-- Vista Tree -->
+        <record id="view_cuadro_tree" model="ir.ui.view">
+            <field name="name">quintoarte.cuadro.tree</field>
+            <field name="model">quintoarte.cuadro</field>
+            <field name="arch" type="xml">
+                <tree string="Cuadros">
+                    <field name="titulo"/>
+                    <field name="autor"/>
+                    <field name="anyo"/>
+                    <field name="precio_alquiler"/>
+                    <field name="propiedad"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Form -->
+        <record id="view_cuadro_form" model="ir.ui.view">
+            <field name="name">quintoarte.cuadro.form</field>
+            <field name="model">quintoarte.cuadro</field>
+            <field name="arch" type="xml">
+                <form string="Cuadro">
+                    <sheet>
+                        <group>
+                            <field name="titulo"/>
+                            <field name="autor"/>
+                            <field name="anyo"/>
+                            <field name="ancho"/>
+                            <field name="alto"/>
+                            <field name="precio_alquiler"/>
+                            <field name="propiedad"/>
+                            <field name="foto" widget="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista Search -->
+        <record id="view_cuadro_search" model="ir.ui.view">
+            <field name="name">quintoarte.cuadro.search</field>
+            <field name="model">quintoarte.cuadro</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Cuadros">
+                    <field name="titulo"/>
+                    <field name="autor"/>
+                    <field name="anyo"/>
+                    <field name="precio_alquiler"/>
+                    <field name="propiedad"/>
+                </search>
+            </field>
+        </record>
     </data>
 </odoo>
