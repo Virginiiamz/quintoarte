@@ -40,19 +40,6 @@
                             <field name="foto" widget="image"/>
                         </group>
                     </sheet>
-                    <notebook>
-                        <page string="Alquileres">
-                            <field name="alquiler_ids" widget="many2many_tags"/>
-                        </page>
-                        <page string="Enmarcados">
-                            <field name="enmarcado_ids">
-                                <tree>
-                                    <field name="nombre"/>
-                                    <field name="descripcion"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
                 </form>
             </field>
         </record>
