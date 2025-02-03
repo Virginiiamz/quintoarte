@@ -1,6 +1,6 @@
 <odoo>
     <data>
-    <!-- Cliente -->
+      <!-- Primero, define el cliente -->
       <record id="cli1" model="quintoarte.cliente">
             <field name="dni">11199944D</field>
             <field name="nombre">Roberto</field>
@@ -10,14 +10,13 @@
             <field name="es_vip">True</field>
             <field name="tipo">particular</field>
             <field name="state">no_paga</field>
-            <field name="alquiler_ids" eval="[(6, 0, [ref('alquiler1')])]"/>
       </record>
 
-      <!-- Alquiler -->
-      <record id="alquiler1" model="quintoarte.cliente">
+    <!-- Luego, define el alquiler y referencia el cliente -->
+      <record id="alquiler1" model="quintoarte.alquiler">
             <field name="fecha_inicio">12/01/2025</field>
             <field name="fecha_fin">18/01/2025</field>
-            <field name="precio_total">54,2</field>
+            <field name="precio_total">54.2</field>
             <field name="observacion">Un alquiler de Roberto Moreno</field>
             <field name="direccion">Sevilla</field>
             <field name="cliente_id" ref="cli1"/>
