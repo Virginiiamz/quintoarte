@@ -30,7 +30,7 @@
         </record>
  
         <record model="ir.actions.act_window" id="act_enmarcado">
-            <field name="name">enmarcado</field>
+            <field name="name">Enmarcado</field>
             <field name="res_model">quintoarte.enmarcado</field>
             <field name="view_mode">calendar,tree,form</field>
             <field name="view_id" ref="vista_enmarcado_tree"/>

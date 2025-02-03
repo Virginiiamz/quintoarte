@@ -6,5 +6,36 @@
             <field name="res_model">quintoarte.alquiler</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <!-- Vista Tree -->
+        <record id="view_alquiler_tree" model="ir.ui.view">
+            <field name="name">quintoarte.alquiler.tree</field>
+            <field name="model">quintoarte.alquiler</field>
+            <field name="arch" type="xml">
+                <tree string="Alquileres">
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="cliente_id"/>
+                    <field name="empleado_id"/>
+                    <field name="precio_total"/>
+                    <field name="direccion"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Search -->
+        <record id="view_alquiler_search" model="ir.ui.view">
+            <field name="name">quintoarte.alquiler.search</field>
+            <field name="model">quintoarte.alquiler</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Alquileres">
+                    <field name="cliente_id"/>
+                    <field name="empleado_id"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="precio_total"/>
+                </search>
+            </field>
+        </record>
     </data>
 </odoo>
