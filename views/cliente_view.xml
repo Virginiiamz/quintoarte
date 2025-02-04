@@ -2,13 +2,9 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="vista_cliente_tree">
-            <field name="name">quintoarte.cliente.kanban</field>
+            <field name="name">quintoarte.cliente.tree</field>
             <field name="model">quintoarte.cliente</field>
             <field name="arch" type="xml">
-                <!-- <header>
-                    <button name="btn_submit_to_pagasiempre" string="Marcar como Paga Siempre" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'paga_siempre')]}"/>
-                    <button name="btn_submit_to_nopaga" string="Marcar como No Paga" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'no_paga')]}"/>
-                </header> -->
                 <tree string="Lista de clientes">
                     <!-- Datos que se muestra en la tabla -->
                     <field name="dni"/>
@@ -18,6 +14,27 @@
                     <field name="state" decoration-danger="state == 'no_paga'" decoration-success="state == 'paga_siempre'"/>
                     <field name="enmarcado_ids"/>
                 </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_cliente_form">
+            <field name="name">quintoarte.cliente.form</field>
+            <field name="model">quintoarte.cliente</field>
+            <field name="arch" type="xml">
+                
+                <form string="Lista de clientes">
+                <header>
+                    <button name="btn_submit_to_pagasiempre" string="Marcar como Paga Siempre" type="object" class="oe_highlight" />
+                    <button name="btn_submit_to_nopaga" string="Marcar como No Paga"  type="object" class="oe_highlight" />
+                </header> 
+                    <!-- Datos que se muestra en la tabla -->
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="tipo"/>
+                    <field name="state" decoration-danger="state == 'no_paga'" decoration-success="state == 'paga_siempre'"/>
+                    <field name="enmarcado_ids"/>
+                </form>
             </field>
         </record>
 
