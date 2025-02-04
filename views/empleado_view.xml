@@ -15,6 +15,37 @@
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="vista_empleado_form">
+            <field name="name">quintoarte.empleado.form</field>
+            <field name="model">quintoarte.empleado</field>
+            <field name="arch" type="xml">
+                <form string="Lista de Empleados">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="dni"/>
+                                <field name="nombre"/>
+                                <field name="apellidos"/>
+                                <field name="direccion"/>
+                            </group>
+                            <group>
+                                <field name="telefono"/>
+                                <field name="puesto"/>
+                                <field name="sueldo"/>
+                                <field name="es_jefe"/>
+                            </group>
+                        </group>
+                        
+                        <notebook>
+                            <page string="Historial de Alquileres">
+                                <field name="alquiler_ids" widget="one2many_list"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
 		<record model="ir.ui.view" id="view_empleado_search">
 			<field name="name">quintoarte.empleado.search</field>
 			<field name="model">quintoarte.empleado</field>

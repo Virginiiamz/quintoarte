@@ -21,19 +21,46 @@
             <field name="name">quintoarte.cliente.form</field>
             <field name="model">quintoarte.cliente</field>
             <field name="arch" type="xml">
-                
-                <form string="Lista de clientes">
-                <header>
-                    <button name="btn_submit_to_pagasiempre" string="Marcar como Paga Siempre" type="object" class="oe_highlight" />
-                    <button name="btn_submit_to_nopaga" string="Marcar como No Paga"  type="object" class="oe_highlight" />
-                </header> 
-                    <!-- Datos que se muestra en la tabla -->
-                    <field name="dni"/>
-                    <field name="nombre"/>
-                    <field name="apellidos"/>
-                    <field name="tipo"/>
-                    <field name="state" decoration-danger="state == 'no_paga'" decoration-success="state == 'paga_siempre'"/>
-                    <field name="enmarcado_ids"/>
+                <form string="Lista de Clientes">
+                    <header>
+                        <button name="btn_submit_to_pagasiempre" 
+                                string="Marcar como Paga Siempre" 
+                                type="object" 
+                                class="oe_highlight"/>
+                        <button name="btn_submit_to_nopaga" 
+                                string="Marcar como No Paga" 
+                                type="object" 
+                                class="oe_highlight"/>
+                    </header>
+                    
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="dni"/>
+                                <field name="nombre"/>
+                                <field name="apellidos"/>
+                                <field name="direccion"/>
+                            </group>
+                            <group>
+                                <field name="telefono"/>
+                                <field name="tipo"/>
+                                <field name="state" 
+                                    decoration-danger="state == 'no_paga'" 
+                                    decoration-success="state == 'paga_siempre'"/>
+                            </group>
+                        </group>
+                        
+                        <notebook>
+                            <page string="Historial de Enmarcados">
+                                <field name="enmarcado_ids" widget="one2many"/>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Historial de Alquileres">
+                                <field name="alquiler_ids" widget="one2many"/>
+                            </page>
+                        </notebook>
+                    </sheet>
                 </form>
             </field>
         </record>

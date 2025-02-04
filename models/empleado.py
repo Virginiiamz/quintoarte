@@ -18,5 +18,5 @@ class empleado (models.Model):
             if record.sueldo < 1200:
                 raise ValidationError("El sueldo tiene que ser igual o superior a 1200€.")
     
-    alquiler_ids = fields.One2many("quintoarte.alquiler","alquiler_id",string="Alquileres")
+    alquiler_ids = fields.One2many("quintoarte.alquiler","empleado_id",string="Alquileres")
      
