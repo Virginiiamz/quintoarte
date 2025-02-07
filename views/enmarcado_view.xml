@@ -12,10 +12,46 @@
                     <field name="metros"/>
                     <field name="precio_total"/>
                     <field name="fecha_enmarcado"/>
+                    <field name="estadoEnmarcado" decoration-danger="estadoEnmarcado == 'enproceso'" decoration-success="estadoEnmarcado == 'terminado'"/>
                 </tree>
             </field>
         </record>
         
+
+        <record model="ir.ui.view" id="vista_enmarcado_form">
+            <field name="name">quintoarte.enmarcado.form</field>
+            <field name="model">quintoarte.enmarcado</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de enmarcado">
+                    <header>
+                        <button name="btn_submit_to_terminado" 
+                                string="Marcar como terminado" 
+                                type="object" 
+                                class="oe_highlight"/>
+                        <button name="btn_submit_to_enproceso" 
+                                string="Marcar como en proceso" 
+                                type="object" 
+                                class="oe_highlight"/>
+                    </header>
+                    
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="enmarcado_id"/>
+                                <field name="metros"/>
+                                <field name="precio_total"/>
+                                <field name="fecha_enmarcado"/>
+                            </group>
+                            <group>
+                                <field name="estadoEnmarcado" 
+                                    decoration-danger="estadoEnmarcado == 'enproceso'" 
+                                    decoration-success="estadoEnmarcado == 'terminado'"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
   
         <record model="ir.ui.view" id="enmarcado_calendar_view">
             <field name="name">Calenario enmarcado</field>
@@ -25,6 +61,7 @@
                     <field name="enmarcado_id"/>
                     <field name="metros"/>
                     <field name="precio_total" /> 
+                    <field name="estadoEnmarcado"/>
                 </calendar>
             </field>
         </record>
