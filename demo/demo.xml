@@ -95,5 +95,56 @@
               <field name="cliente_id" ref="cli3"/>
               <field name="empleado_id" ref="empleado3"/>
         </record>
+
+      <!-- Cuadros -->
+        <record id="cuadro1" model="quintoarte.cuadro">
+            <field name="titulo">La Noche Estrellada</field>
+            <field name="autor">Vincent van Gogh</field>
+            <field name="anyo">1889</field>
+            <field name="ancho">73</field>
+            <field name="alto">92</field>
+            <field name="precio_alquiler">50.0</field>
+            <field name="propiedad">tienda</field>
+        </record>
+        
+        <record id="cuadro2" model="quintoarte.cuadro">
+            <field name="titulo">La Gioconda</field>
+            <field name="autor">Leonardo da Vinci</field>
+            <field name="anyo">1503</field>
+            <field name="ancho">77</field>
+            <field name="alto">53</field>
+            <field name="precio_alquiler">75.0</field>
+            <field name="propiedad">cliente</field>
+        </record>
+        
+        <record id="cuadro3" model="quintoarte.cuadro">
+            <field name="titulo">El Grito</field>
+            <field name="autor">Edvard Munch</field>
+            <field name="anyo">1893</field>
+            <field name="ancho">91</field>
+            <field name="alto">73</field>
+            <field name="precio_alquiler">60.0</field>
+            <field name="propiedad">tienda</field>
+        </record>
+        
+        <record id="cuadro4" model="quintoarte.cuadro">
+            <field name="titulo">Las Meninas</field>
+            <field name="autor">Diego Velázquez</field>
+            <field name="anyo">1656</field>
+            <field name="ancho">318</field>
+            <field name="alto">276</field>
+            <field name="precio_alquiler">90.0</field>
+            <field name="propiedad">cliente</field>
+        </record>
+        
+        <record id="cuadro5" model="quintoarte.cuadro">
+            <field name="titulo">La Persistencia de la Memoria</field>
+            <field name="autor">Salvador Dalí</field>
+            <field name="anyo">1931</field>
+            <field name="ancho">24</field>
+            <field name="alto">33</field>
+            <field name="precio_alquiler">45.0</field>
+            <field name="propiedad">tienda</field>
+        </record>
     </data>
 </odoo>
