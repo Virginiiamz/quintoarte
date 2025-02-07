@@ -105,6 +105,7 @@
             <field name="alto">92</field>
             <field name="precio_alquiler">50.0</field>
             <field name="propiedad">tienda</field>
+            <field name="alquiler_ids" eval="[(4, ref('alquiler1'))]"/>
         </record>
         
         <record id="cuadro2" model="quintoarte.cuadro">
@@ -115,6 +116,7 @@
             <field name="alto">53</field>
             <field name="precio_alquiler">75.0</field>
             <field name="propiedad">cliente</field>
+            <field name="alquiler_ids" eval="[(4, ref('alquiler2'))]"/>
         </record>
         
         <record id="cuadro3" model="quintoarte.cuadro">
@@ -125,6 +127,7 @@
             <field name="alto">73</field>
             <field name="precio_alquiler">60.0</field>
             <field name="propiedad">tienda</field>
+            <field name="alquiler_ids" eval="[(4, ref('alquiler3'))]"/>
         </record>
         
         <record id="cuadro4" model="quintoarte.cuadro">
