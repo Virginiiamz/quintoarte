@@ -71,29 +71,29 @@
         <record id="alquiler1" model="quintoarte.alquiler">
               <field name="fecha_inicio">2025-01-12</field>
               <field name="fecha_fin">2025-01-18</field>
+              <field name="precio_total">0</field>
               <field name="observacion">Un alquiler de Roberto Moreno</field>
               <field name="direccion">Sevilla</field>
               <field name="cliente_id" ref="cli1"/>
               <field name="empleado_id" ref="empleado1"/>
-              <field name="cuadro_ids" eval="[(6, 0, [ref('cuadro1'), ref('cuadro3')])]"/>
         </record>
         <record id="alquiler2" model="quintoarte.alquiler">
               <field name="fecha_inicio">2025-01-08</field>
               <field name="fecha_fin">2025-01-18</field> 
+              <field name="precio_total">0</field>
               <field name="observacion">Un alquiler de Pablo Garcia</field>
               <field name="direccion">Sevilla</field>
               <field name="cliente_id" ref="cli2"/>
               <field name="empleado_id" ref="empleado2"/>
-              <field name="cuadro_ids" eval="[(6, 0, [ref('cuadro_1'), ref('cuadro_3')])]"/>
         </record>
         <record id="alquiler3" model="quintoarte.alquiler">
               <field name="fecha_inicio">2025-01-01</field>
               <field name="fecha_fin">2025-01-24</field>
+              <field name="precio_total">0</field>
               <field name="observacion">Un alquiler de Lucia Martinez</field>
               <field name="direccion">Sevilla</field>
               <field name="cliente_id" ref="cli3"/>
               <field name="empleado_id" ref="empleado3"/>
-              <field name="cuadro_ids" eval="[(6, 0, [ref('cuadro_1'), ref('cuadro_3')])]"/>
         </record>
 
       <!-- Cuadros -->
