@@ -13,6 +13,7 @@
                     <field name="tipo"/>
                     <field name="state" decoration-danger="state == 'no_paga'" decoration-success="state == 'paga_siempre'"/>
                     <field name="enmarcado_ids"/>
+                    <field name="alquiler_ids"/>
                 </tree>
             </field>
         </record>
