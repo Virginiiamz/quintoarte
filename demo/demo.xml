@@ -75,6 +75,7 @@
               <field name="observacion">Un alquiler de Roberto Moreno</field>
               <field name="direccion">Sevilla</field>
               <field name="cliente_id" ref="cli1"/>
+              <field name="empleado_id" ref="empleado1"/>
         </record>
         <record id="alquiler2" model="quintoarte.alquiler">
               <field name="fecha_inicio">2025-01-08</field>
@@ -83,6 +84,7 @@
               <field name="observacion">Un alquiler de Pablo Garcia</field>
               <field name="direccion">Sevilla</field>
               <field name="cliente_id" ref="cli2"/>
+              <field name="empleado_id" ref="empleado2"/>
         </record>
         <record id="alquiler3" model="quintoarte.alquiler">
               <field name="fecha_inicio">2025-01-01</field>
@@ -91,6 +93,7 @@
               <field name="observacion">Un alquiler de Lucia Martinez</field>
               <field name="direccion">Sevilla</field>
               <field name="cliente_id" ref="cli3"/>
+              <field name="empleado_id" ref="empleado3"/>
         </record>
     </data>
 </odoo>
