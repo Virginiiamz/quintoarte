@@ -12,7 +12,7 @@ class cuadro(models.Model):
     anyo = fields.Integer("Año", size=4)
     ancho = fields.Integer("Ancho", size=3)
     alto = fields.Integer("Alto", size=3)
-    precio_alquiler = fields.Float("Precio alquiler", readonly=True)
+    precio_alquiler = fields.Float("Precio alquiler por día", readonly=True)
     propiedad = fields.Selection([('cliente', 'Cliente'), ('tienda', 'Tienda')], "Propiedad", default='cliente', required=True)
     foto = fields.Binary("Foto")
 
