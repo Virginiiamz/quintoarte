@@ -11,6 +11,7 @@
 					<field name="apellidos" />
 					<field name="sueldo" />
 					<field name="puesto" />
+					<field name="alquiler_ids" />
 				</tree>
 			</field>
 		</record>
