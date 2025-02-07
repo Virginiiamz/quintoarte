@@ -12,18 +12,21 @@
                     <field name="metros"/>
                     <field name="precio_total"/>
                     <field name="fecha_enmarcado"/>
+                    <field name="marco_id"/>
+                    <field name="cuadro_id"/>
+                    <field name="cliente_id"/>
                     <field name="estadoEnmarcado" decoration-danger="estadoEnmarcado == 'enproceso'" decoration-success="estadoEnmarcado == 'terminado'"/>
                 </tree>
             </field>
         </record>
         
 
-        <record model="ir.ui.view" id="vista_enmarcado_form">
+        <record id="view_enmarcado_form" model="ir.ui.view">
             <field name="name">quintoarte.enmarcado.form</field>
             <field name="model">quintoarte.enmarcado</field>
             <field name="arch" type="xml">
-                <form string="Formulario de enmarcado">
-                    <header>
+                <form string="Enmarcado">
+                <header>
                         <button name="btn_submit_to_terminado" 
                                 string="Marcar como terminado" 
                                 type="object" 
@@ -33,19 +36,19 @@
                                 type="object" 
                                 class="oe_highlight"/>
                     </header>
-                    
                     <sheet>
                         <group>
-                            <group>
+                            <group string="General">
                                 <field name="enmarcado_id"/>
                                 <field name="metros"/>
                                 <field name="precio_total"/>
                                 <field name="fecha_enmarcado"/>
+                                <field name="estadoEnmarcado"/>
                             </group>
-                            <group>
-                                <field name="estadoEnmarcado" 
-                                    decoration-danger="estadoEnmarcado == 'enproceso'" 
-                                    decoration-success="estadoEnmarcado == 'terminado'"/>
+                            <group string="Relaciones">
+                                <field name="marco_id" domain="[('id','!=',marco_id)]"/>
+                                <field name="cuadro_id" domain="[('id','!=',cuadro_id)]"/>
+                                <field name="cliente_id"/>
                             </group>
                         </group>
                     </sheet>

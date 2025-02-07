@@ -149,5 +149,85 @@
             <field name="precio_alquiler">45.0</field>
             <field name="propiedad">tienda</field>
         </record>
+
+      <!-- marcos -->
+<record id="marco_1" model="quintoarte.marco">
+        <field name="marco_id">1</field>
+        <field name="nombre">Golden bulgarian</field>
+        <field name="descripcion">Color dorado sofisticado con textura bulgariana</field>
+        <!-- <field name="foto">imagen1.png</field> -->
+        <field name="precio_metro">99</field>
+    </record>
+
+    <record id="marco_2" model="quintoarte.marco">
+        <field name="marco_id">2</field>
+        <field name="nombre">Hawking</field>
+        <field name="descripcion">Color vanta negro con acentos de azul marino, con un diseño inspirado en el espacio</field>
+        <!-- <field name="foto">imagen2.png</field> -->
+        <field name="precio_metro">49.9</field>
+    </record>
+
+    <record id="marco_3" model="quintoarte.marco">
+        <field name="marco_id">3</field>
+        <field name="nombre">Saul Call</field>
+        <field name="descripcion">Marco basico de madera de cocobolo, profesional y simple</field>
+        <!-- <field name="foto">imagen3.png</field> -->
+        <field name="precio_metro">29.0</field>
+    </record>
+
+    <record id="marco_4" model="quintoarte.marco">
+        <field name="marco_id">4</field>
+        <field name="nombre">Ikea Fiskbo</field>
+        <field name="descripcion">Marco negro fiskbo de ikea</field>
+        <!-- <field name="foto">imagen4.png</field> -->
+        <field name="precio_metro">5.0</field>
+    </record>
+
+    <!-- Enmarcados -->
+
+    <record id="enmarcado_1" model="quintoarte.enmarcado">
+    <field name="enmarcado_id">1</field>
+    <field name="metros">5.0</field>
+    <field name="precio_total">495</field>
+    <field name="fecha_enmarcado">2025-01-15</field>
+    <field name="estadoEnmarcado">enproceso</field>
+    <field name="marco_id" ref="marco_1"/>
+    <field name="cuadro_id" ref="cuadro1"/>
+    <field name="cliente_id" ref="cli1"/>
+</record>
+
+<record id="enmarcado_2" model="quintoarte.enmarcado">
+    <field name="enmarcado_id">2</field>
+    <field name="metros">3.5</field>
+    <field name="precio_total">174.65</field>
+    <field name="fecha_enmarcado">2025-01-10</field>
+    <field name="estadoEnmarcado">terminado</field>
+    <field name="marco_id" ref="marco_2"/>
+    <field name="cuadro_id" ref="cuadro2"/>
+    <field name="cliente_id" ref="cli2"/>
+</record>
+
+<record id="enmarcado_3" model="quintoarte.enmarcado">
+    <field name="enmarcado_id">3</field>
+    <field name="metros">2.0</field>
+    <field name="precio_total">58.0</field>
+    <field name="fecha_enmarcado">2025-01-05</field>
+    <field name="estadoEnmarcado">enproceso</field>
+    <field name="marco_id" ref="marco_3"/>
+    <field name="cuadro_id" ref="cuadro3"/>
+    <field name="cliente_id" ref="cli3"/>
+</record>
+
+<record id="enmarcado_4" model="quintoarte.enmarcado">
+    <field name="enmarcado_id">4</field>
+    <field name="metros">4.0</field>
+    <field name="precio_total">20</field>
+    <field name="fecha_enmarcado">2025-01-20</field>
+    <field name="estadoEnmarcado">terminado</field>
+    <field name="marco_id" ref="marco_4"/>
+    <field name="cuadro_id" ref="cuadro4"/>
+    <field name="cliente_id" ref="cli1"/>
+</record>
+
     </data>
 </odoo>
