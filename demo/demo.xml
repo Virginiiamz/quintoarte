@@ -11,15 +11,52 @@
               <field name="tipo">particular</field>
               <field name="state">no_paga</field>
         </record>
+        <record id="cli2" model="quintoarte.cliente">
+              <field name="dni">11122233L</field>
+              <field name="nombre">Pablo</field>
+              <field name="apellidos">Garcia</field>
+              <field name="direccion">Sevilla</field>
+              <field name="telefono">112233447</field>
+              <field name="es_vip">False</field>
+              <field name="tipo">empresa publica</field>
+              <field name="state">paga_siempre</field>
+        </record>
+        <record id="cli3" model="quintoarte.cliente">
+              <field name="dni">34344958P</field>
+              <field name="nombre">Lucia</field>
+              <field name="apellidos">Martinez</field>
+              <field name="direccion">Cadiz</field>
+              <field name="telefono">111189768</field>
+              <field name="es_vip">False</field>
+              <field name="tipo">empresa privada</field>
+              <field name="state">no_paga</field>
+        </record>
+
 
       <!-- Luego, define el alquiler y referencia el cliente -->
         <record id="alquiler1" model="quintoarte.alquiler">
-              <field name="fecha_inicio">2025-01-12</field> <!-- Formato corregido -->
-              <field name="fecha_fin">2025-01-18</field>   <!-- Formato corregido -->
+              <field name="fecha_inicio">2025-01-12</field>
+              <field name="fecha_fin">2025-01-18</field>  
               <field name="precio_total">54.2</field>
               <field name="observacion">Un alquiler de Roberto Moreno</field>
               <field name="direccion">Sevilla</field>
               <field name="cliente_id" ref="cli1"/>
+        </record>
+        <record id="alquiler2" model="quintoarte.alquiler">
+              <field name="fecha_inicio">2025-01-08</field>
+              <field name="fecha_fin">2025-01-18</field> 
+              <field name="precio_total">60</field>
+              <field name="observacion">Un alquiler de Pablo Garcia</field>
+              <field name="direccion">Sevilla</field>
+              <field name="cliente_id" ref="cli2"/>
+        </record>
+        <record id="alquiler3" model="quintoarte.alquiler">
+              <field name="fecha_inicio">2025-01-01</field>
+              <field name="fecha_fin">2025-01-24</field>
+              <field name="precio_total">72.50</field>
+              <field name="observacion">Un alquiler de Lucia Martinez</field>
+              <field name="direccion">Sevilla</field>
+              <field name="cliente_id" ref="cli3"/>
         </record>
     </data>
 </odoo>
