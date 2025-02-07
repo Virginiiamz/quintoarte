@@ -44,18 +44,15 @@
             </field>
         </record>
 
-        <!-- Vista Search -->
-        <record id="view_alquiler_search" model="ir.ui.view">
-            <field name="name">quintoarte.alquiler.search</field>
+        <!-- Vista Calendar -->
+        <record id="view_alquiler_calendar" model="ir.ui.view">
+            <field name="name">quintoarte.alquiler.calendar</field>
             <field name="model">quintoarte.alquiler</field>
             <field name="arch" type="xml">
-                <search string="Buscar Alquileres">
+                <calendar string="Calendario de Alquileres" date_start="fecha_inicio" date_stop="fecha_fin" color="cliente_id">
                     <field name="cliente_id"/>
                     <field name="empleado_id"/>
-                    <field name="fecha_inicio"/>
-                    <field name="fecha_fin"/>
-                    <field name="precio_total"/>
-                </search>
+                </calendar>
             </field>
         </record>
     </data>
