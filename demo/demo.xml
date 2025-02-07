@@ -32,6 +32,40 @@
               <field name="state">no_paga</field>
         </record>
 
+      <!-- Creamos a los empleados -->
+        <record id="empleado1" model="quintoarte.empleado">
+              <field name="dni">11199945D</field>
+              <field name="nombre">Carlos</field>
+              <field name="apellidos">Muñoz</field>
+              <field name="direccion">Sevilla</field>
+              <field name="telefono">123556676</field>
+              <field name="sueldo">1400</field>
+              <field name="es_jefe">False</field>
+              <field name="puesto">Tecnico</field>
+        </record>
+
+        <record id="empleado2" model="quintoarte.empleado">
+              <field name="dni">11199948M</field>
+              <field name="nombre">Pablo</field>
+              <field name="apellidos">Campos</field>
+              <field name="direccion">Sevilla</field>
+              <field name="telefono">123556459</field>
+              <field name="sueldo">1670</field>
+              <field name="es_jefe">True</field>
+              <field name="puesto">Jefe de proyecto</field>
+        </record>
+
+        <record id="empleado3" model="quintoarte.empleado">
+              <field name="dni">11199941N</field>
+              <field name="nombre">Virginia</field>
+              <field name="apellidos">Castro</field>
+              <field name="direccion">Utrera</field>
+              <field name="telefono">123556423</field>
+              <field name="sueldo">1200</field>
+              <field name="es_jefe">False</field>
+              <field name="puesto">Recursos humanos</field>
+        </record>
+
 
       <!-- Luego, define el alquiler y referencia el cliente -->
         <record id="alquiler1" model="quintoarte.alquiler">
