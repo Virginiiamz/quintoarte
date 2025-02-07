@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <!-- Plantilla del informe -->
+        <template id="report_quintoarte_enmarcado_document">
+            <t t-name="quintoarte.report_quintoarte_enmarcado_document">
+                <!-- Usamos external_layout/internal_layout para asegurar la estructura adecuada -->
+                <t t-call="web.html_container">
+
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <h1>Lista de Enmarcado de Quintoarte</h1>
+                            <table class="table table-bordered" style="width: 100%; border-collapse: collapse; text-align: left;">
+                                <thead>
+                                    <tr>
+                                        <th style="border: 1px solid #000; padding: 8px;">ID ENMARCADO</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">METROS ENMARCADO</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">PRECIO TOTAL</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">FECHA ENMARCADO</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">ESTADO</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">MARCO</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">CUADRO</th>
+                                        <th style="border: 1px solid #000; padding: 8px;">CLIENTE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="docs" t-as="enmarcado">
+                                        <tr>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.enmarcado_id"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.metros"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.precio_total"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.fecha_enmarcado"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.estadoEnmarcado"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.marco_id.nombre"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.cuadro_id.titulo"/>
+                                            </td>
+                                            <td style="border: 1px solid #000; padding: 8px;">
+                                                <t t-esc="enmarcado.cliente_id.nombre"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <!-- Acción de reporte -->
+        <report id="quintoarte_enmarcado_report_action" 
+    model="quintoarte.enmarcado" 
+    string="Quintoarte Enmarcado Report" 
+    report_type="qweb-pdf" 
+    name="quintoarte.report_quintoarte_enmarcado_document"
+    file="quintoarte.report_quintoarte_enmarcado_document" 
+    print_report_name="'Quintoarte Enmarcado'" />
+    </data>
+</odoo>

@@ -36,6 +36,7 @@
         'views/alquiler_view.xml',
         'views/cuadro_view.xml',
         'views/empleado_reports.xml',
+        'views/enmarcado_reports.xml',
         'views/menu_view.xml',
         'demo/demo.xml'
     ],
