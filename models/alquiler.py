@@ -22,11 +22,16 @@ class alquiler(models.Model):
         for record in self:
             total = 0
             if record.fecha_inicio and record.fecha_fin:
+                # Calcular la cantidad de días del alquiler
                 dias = (record.fecha_fin - record.fecha_inicio).days
-                if dias < 0:
-                    dias = 0  # Evitar valores negativos
                 
+                # Evitar valores negativos o alquileres de 0 días
+                if dias <= 0:
+                    dias = 1  
+
+                # Calcular el precio proporcional por día
                 for cuadro in record.cuadro_ids:
-                    total += cuadro.precio_unitario * dias  # Suponiendo que el precio es por día
+                    precio_diario = cuadro.precio_alquiler / 30  # Precio mensual dividido entre 30 días
+                    total += precio_diario * dias  # Multiplicamos por los días de alquiler
                 
             record.precio_total = total
